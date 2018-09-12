@@ -1,0 +1,30 @@
+<div ng-controller="galleryController as subCtrl">
+	<!-- HEADER AND TODO COUNT -->
+	<div class="jumbotron text-center">
+		<h1>{{$root.title}}</h1>
+	</div>
+
+	<div class="row" style="width:100%; margin-bottom: 20px;">
+		<div class="col-sm-12 text-center">
+			<form action="/api/image" enctype="multipart/form-data" method="POST">
+				<div class="form-group">
+					<!-- <input type="text" class="form-control input-lg text-center" ng-model="subCtrl.formData.text"> -->
+					<input type="file" name="image">
+				</div>
+				<input type="submit" class="btn btn-primary btn-lg" value="Upload" />
+			</form>
+		</div>
+	</div>
+	<div class="gallery">
+		<table>
+			<tr ng-repeat="i in [].constructor(subCtrl.rowAmount) track by $index">
+				<td ng-repeat="o in subCtrl.images | limitTo : subCtrl.imagesPerRow : $index*subCtrl.imagesPerRow" style="width:{{100/subCtrl.imagesPerRow}}%">
+					<div class="thumbnail" style="cursor:zoom-in" title="Click to grow the image">
+						<img src="data:{{o.contentType}};base64, {{o.data}}" ng-click="subCtrl.growImage(o)" ng-class="o.portrait ? 'portrait' : ''"/>
+						<span style="cursor:pointer" ng-click="subCtrl.delete(o._id)"  title="Click to delete the image">X</span>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,56 @@
+html { overflow-y:scroll; }
+header {overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+	background-color:#3276b1;
+	height:170px
+}
+	
+.body { padding-top:200px; }
+
+#todo-list  { margin-bottom:30px; }
+
+.thumbnail {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+}
+.thumbnail img {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 100%;
+	width: auto;
+	-webkit-transform: translate(-50%,-50%);
+		-ms-transform: translate(-50%,-50%);
+			transform: translate(-50%,-50%);
+}
+.thumbnail img.portrait {
+	width: 100%;
+	height: auto;
+}
+.thumbnail span {
+	position: relative;
+	top:0px;
+	right:0px;
+	color:white;
+	background-color: grey;
+	height:15px;
+	width:15px;
+}
+
+.gallery {
+	width:100%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.gallery table {
+	width:100%;
+}
+
+.gallery img {
+	vertical-align:middle;
+}

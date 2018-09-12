@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="todoapp">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+		<title>Node/Angular Todo App</title>
+
+		<!-- SCROLLS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/angular-material.min.css">
+
+		<!-- SPELLS -->
+		<script src="angularjs/angular.js"></script>
+		<script src="angularjs/angular-locale_fr-fr.js"></script>
+		<script src="angularjs/angular-utf8-base64.js"></script>
+		<script src="angularjs/angular-cookies.js"></script>
+		<script src="angularjs/angular-route.js"></script>
+		<script src="angularjs/angular-file-upload.js"></script>
+		<script src="angularjs/angular-animate.js"></script>
+		<script src="angularjs/angular-touch.js"></script>
+		<script src="angularjs/angular-aria.js"></script>
+		<script src="angularjs/angular-messages.js"></script>
+		<script src="angularjs/angular-material.js"></script>
+		<script src="controller-main.js"></script>
+		<script src="controller-home.js"></script>
+		<script src="controller-gallery.js"></script>
+	</head>
+	<body ng-controller="mainController as ctrl">
+		<header>
+			<div class="navbar">
+				<a href="" ng-click="ctrl.goto('home')">Accueil</a>
+				<a href="" ng-click="ctrl.goto('gallery')">Galerie</a>
+			</div>
+		</header>
+		<section id="inset" class="container body">
+			<div ng-view></div>
+		</section>
+	</body>
+</html>
